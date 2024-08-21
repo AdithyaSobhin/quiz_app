@@ -1,5 +1,5 @@
 class Dummydb {
-  static List Quastions = [
+  static List Questions = [
     {
       "question": "What is the capital of France?",
       "options": ["Berlin", "Madrid", "Paris", "Lisbon"],
