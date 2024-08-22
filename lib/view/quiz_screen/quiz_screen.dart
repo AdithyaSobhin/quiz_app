@@ -13,13 +13,19 @@ class QuizScreen extends StatefulWidget {
 class _QuizScreenState extends State<QuizScreen> {
   int questionIndex = 0;
   int? selectedAnswerIndex;
+  int rightAnsCount = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: AppBar(
         backgroundColor: Colors.black,
-        actions: [Text("1/10")],
+        actions: [
+          Text(
+            "${questionIndex + 1}/${Dummydb.Questions.length}",
+            style: TextStyle(color: Colors.white),
+          )
+        ],
       ),
       body: SafeArea(
         child: Padding(
@@ -42,6 +48,12 @@ class _QuizScreenState extends State<QuizScreen> {
                     onOptionsTap: () {
                       if (selectedAnswerIndex == null) {
                         selectedAnswerIndex = index;
+
+                        if (selectedAnswerIndex ==
+                            Dummydb.Questions[questionIndex]["answer"]) {
+                          rightAnsCount++;
+                          print("right answer:${rightAnsCount}");
+                        }
                         setState(() {});
                       }
                     },
@@ -75,7 +87,9 @@ class _QuizScreenState extends State<QuizScreen> {
           Navigator.pushReplacement(
               context,
               MaterialPageRoute(
-                builder: (context) => ResultScreen(),
+                builder: (context) => ResultScreen(
+                  rightAnswerCount: rightAnsCount,
+                ),
               ));
         }
       },

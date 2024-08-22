@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:quiz_app/dummydb.dart';
 
 class ResultScreen extends StatelessWidget {
-  const ResultScreen({super.key});
+  const ResultScreen({super.key, required this.rightAnswerCount});
+  final int rightAnswerCount;
 
   @override
   Widget build(BuildContext context) {
@@ -51,7 +53,7 @@ class ResultScreen extends StatelessWidget {
                     fontWeight: FontWeight.bold),
               ),
               Text(
-                "4/10",
+                "$rightAnswerCount/${Dummydb.Questions.length}",
                 style: TextStyle(
                     color: Colors.amber.shade500,
                     fontSize: 25,
@@ -70,7 +72,7 @@ class ResultScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Icon(
-                      Icons.refresh_rounded,
+                      Icons.replay_circle_filled_rounded,
                       color: Colors.black,
                     ),
                     SizedBox(
