@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_app/dummydb.dart';
-import 'package:quiz_app/view/quiz_screen/quiz_screen.dart';
+import 'package:quiz_app/view/category_screen/category_screen.dart';
 
 class ResultScreen extends StatefulWidget {
   const ResultScreen({super.key, required this.rightAnswerCount});
@@ -21,7 +21,7 @@ class _ResultScreenState extends State<ResultScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Colors.purple,
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(8.0),
@@ -79,7 +79,7 @@ class _ResultScreenState extends State<ResultScreen> {
                   Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => QuizScreen(),
+                        builder: (context) => CategoryScreen(),
                       ));
                 },
                 child: Container(

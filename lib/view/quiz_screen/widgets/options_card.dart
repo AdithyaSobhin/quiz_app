@@ -25,20 +25,21 @@ class OptionsCard extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
-              border: Border.all(width: 2, color: borderColor)),
+              border: Border.all(width: 4, color: borderColor)),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                Dummydb.Questions[questionIndex]["options"][optionIndex],
+                Dummydb.Questions[questionIndex]["questions"]["options"]
+                    [optionIndex],
                 style:
-                    TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+                    TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
               ),
               CircleAvatar(
                 radius: 9,
                 child: CircleAvatar(
                   radius: 8,
-                  backgroundColor: Colors.black,
+                  backgroundColor: const Color.fromARGB(255, 218, 140, 232),
                 ),
               )
             ],
