@@ -3,7 +3,6 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:quiz_app/utilis/image_constants.dart';
 import 'package:quiz_app/view/category_screen/category_screen.dart';
-import 'package:quiz_app/view/quiz_screen/quiz_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -15,7 +14,7 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
-    Timer(Duration(seconds: 3), () {
+    Timer(Duration(seconds: 4), () {
       Navigator.pushReplacement(
           context,
           MaterialPageRoute(
@@ -28,10 +27,13 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Image.asset(
-          ImageConstants.splash,
-          fit: BoxFit.cover,
+      backgroundColor: Colors.white,
+      body: Expanded(
+        child: Center(
+          child: Image.asset(
+            ImageConstants.logo,
+            fit: BoxFit.cover,
+          ),
         ),
       ),
     );
