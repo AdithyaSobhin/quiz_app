@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:quiz_app/dummydb.dart';
 import 'package:quiz_app/view/category_screen/category_screen.dart';
 
 class ResultScreen extends StatefulWidget {
-  const ResultScreen(
-      {super.key,
-      required this.rightAnswerCount,
-      required this.totalQuestions});
+  const ResultScreen({
+    super.key,
+    required this.rightAnswerCount,
+    required this.totalQuestions,
+  });
   final int rightAnswerCount;
   final int totalQuestions;
 
@@ -121,8 +121,7 @@ class _ResultScreenState extends State<ResultScreen> {
   }
 
   int calPercentage() {
-    double percentage =
-        (widget.rightAnswerCount / Dummydb.Questions.length) * 100;
+    double percentage = (widget.rightAnswerCount / widget.totalQuestions) * 100;
     print("percentage:$percentage");
     if (percentage >= 80) {
       return 3;
