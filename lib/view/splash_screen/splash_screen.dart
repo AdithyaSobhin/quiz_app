@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:quiz_app/dummydb.dart';
 import 'package:quiz_app/utilis/image_constants.dart';
 import 'package:quiz_app/view/category_screen/category_screen.dart';
 import 'package:quiz_app/view/quiz_screen/quiz_screen.dart';

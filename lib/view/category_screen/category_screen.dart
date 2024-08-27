@@ -53,8 +53,8 @@ class CategoryScreen extends StatelessWidget {
                       context,
                       MaterialPageRoute(
                           builder: (context) => QuizScreen(
-                                categoryData: Dummydb.Questions[index]
-                                    ["questions"],
+                                categoryData: Dummydb.Questions[index],
+                                categoryIndex: index,
                               )),
                     );
                   },
@@ -66,7 +66,6 @@ class CategoryScreen extends StatelessWidget {
                           borderRadius: BorderRadius.circular(20)),
                       child: Center(
                         child: Text(
-                          //monu changes
                           Dummydb.Questions[index]["category"],
                           style: TextStyle(
                               color: Colors.white,
@@ -83,13 +82,11 @@ class CategoryScreen extends StatelessWidget {
                           height: 100,
                           width: 100,
                           decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20),
-                            image: DecorationImage(
-                              fit: BoxFit.cover,
-                              image:
-                                  NetworkImage(Dummydb.Questions[index]["url"]),
-                            ),
-                          ),
+                              borderRadius: BorderRadius.circular(20),
+                              image: DecorationImage(
+                                  fit: BoxFit.cover,
+                                  image: NetworkImage(
+                                      Dummydb.Questions[index]["url"]))),
                         ))
                   ]),
                 );

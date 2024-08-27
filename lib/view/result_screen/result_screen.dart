@@ -3,8 +3,12 @@ import 'package:quiz_app/dummydb.dart';
 import 'package:quiz_app/view/category_screen/category_screen.dart';
 
 class ResultScreen extends StatefulWidget {
-  const ResultScreen({super.key, required this.rightAnswerCount});
+  const ResultScreen(
+      {super.key,
+      required this.rightAnswerCount,
+      required this.totalQuestions});
   final int rightAnswerCount;
+  final int totalQuestions;
 
   @override
   State<ResultScreen> createState() => _ResultScreenState();
@@ -65,7 +69,7 @@ class _ResultScreenState extends State<ResultScreen> {
                     fontWeight: FontWeight.bold),
               ),
               Text(
-                "${widget.rightAnswerCount}/${Dummydb.Questions.length}",
+                "${widget.rightAnswerCount}/${widget.totalQuestions}",
                 style: TextStyle(
                     color: Colors.amber.shade500,
                     fontSize: 25,
