@@ -36,8 +36,8 @@ class _QuizScreenState extends State<QuizScreen> {
 
   @override
   Widget build(BuildContext context) {
-    var questions = widget.categoryData["questions"];
-    var currentQuestion = questions[questionIndex];
+    final questions = widget.categoryData["questions"];
+    final currentQuestion = questions[questionIndex];
 
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 245, 200, 253),
@@ -69,6 +69,16 @@ class _QuizScreenState extends State<QuizScreen> {
           padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
           child: Column(
             children: [
+              LinearProgressIndicator(
+                borderRadius: BorderRadius.circular(10),
+                minHeight: 15,
+                backgroundColor: const Color.fromARGB(255, 245, 200, 253),
+                color: Colors.purple,
+                value: (questionIndex + 1) / questions.length,
+              ),
+              SizedBox(
+                height: 20,
+              ),
               _buildQuestionSection(currentQuestion),
               SizedBox(height: 20),
               Column(
